@@ -13,7 +13,13 @@ import {
   Gauge, 
   Users, 
   ShoppingCart,
-  ChevronRight
+  ChevronRight,
+  Building2,
+  Settings,
+  BarChart3,
+  MessageSquare,
+  Clock,
+  PenTool
 } from "lucide-react"
 
 import {
@@ -25,8 +31,16 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
   SidebarSeparator,
 } from "@/components/ui/sidebar"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 
 const Logo = () => (
   <div className="h-[30px] w-[159px] flex items-center">
@@ -54,19 +68,19 @@ const GoogleIcon = () => (
 
 export function PlatformSidebar() {
   return (
-    <Sidebar className="w-44 bg-[#fcfdfc]">
-      <SidebarHeader className="p-6 pb-0">
+    <Sidebar className="bg-sidebar min-w-0 max-w-full">
+      <SidebarHeader className="p-6 pb-0 mb-12">
         <Logo />
       </SidebarHeader>
       
-      <SidebarContent className="px-0">
+      <SidebarContent className="px-0 min-w-0">
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="min-w-0">
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
+                <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3">
                   <ListChecks className="h-6 w-6 opacity-70" />
-                  <span>Trial Tasks</span>
+                  <span className="truncate">Trial Tasks</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
@@ -74,10 +88,10 @@ export function PlatformSidebar() {
                 <SidebarMenuButton 
                   size="lg" 
                   isActive 
-                  className="bg-[#e6ede8] text-[#171c18] font-semibold"
+                  className="bg-sidebar-accent text-sidebar-accent-foreground font-semibold h-12 px-6 gap-3"
                 >
                   <Home className="h-6 w-6" />
-                  <span>All Locations</span>
+                  <span className="truncate">All Locations</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -88,61 +102,212 @@ export function PlatformSidebar() {
 
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="min-w-0">
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
+                <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3">
                   <LayoutGrid className="h-6 w-6 opacity-70" />
-                  <span>Location Summary</span>
+                  <span className="truncate">Location Summary</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
-                  <MapPin className="h-6 w-6 opacity-70" />
-                  <span>Location Manager</span>
-                  <ChevronRight className="h-3 w-3 text-[#4e5b51] ml-auto" />
-                </SidebarMenuButton>
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3 relative">
+                      <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+                        <ChevronRight className="h-4 w-4 text-sidebar-foreground transition-transform group-data-[state=open]:rotate-90" />
+                      </div>
+                      <MapPin className="h-6 w-6 opacity-70" />
+                      <span className="truncate">Location Manager</span>
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenuSub>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <Building2 className="h-4 w-4" />
+                          <span className="truncate">Add Location</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <Settings className="h-4 w-4" />
+                          <span className="truncate">Manage Locations</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <BarChart3 className="h-4 w-4" />
+                          <span className="truncate">Location Analytics</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    </SidebarMenuSub>
+                  </CollapsibleContent>
+                </Collapsible>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
-                  <TrendingUp className="h-6 w-6 opacity-70" />
-                  <span>Rankings</span>
-                </SidebarMenuButton>
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3 relative">
+                      <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+                        <ChevronRight className="h-4 w-4 text-sidebar-foreground transition-transform group-data-[state=open]:rotate-90" />
+                      </div>
+                      <TrendingUp className="h-6 w-6 opacity-70" />
+                      <span className="truncate">Rankings</span>
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenuSub>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <BarChart3 className="h-4 w-4" />
+                          <span className="truncate">Rank Tracker</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <TrendingUp className="h-4 w-4" />
+                          <span className="truncate">Keyword Rankings</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <Settings className="h-4 w-4" />
+                          <span className="truncate">Ranking Settings</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    </SidebarMenuSub>
+                  </CollapsibleContent>
+                </Collapsible>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
-                  <CheckCircle className="h-6 w-6 opacity-70" />
-                  <span>Citations</span>
-                </SidebarMenuButton>
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3 relative">
+                      <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+                        <ChevronRight className="h-4 w-4 text-sidebar-foreground transition-transform group-data-[state=open]:rotate-90" />
+                      </div>
+                      <CheckCircle className="h-6 w-6 opacity-70" />
+                      <span className="truncate">Citations</span>
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenuSub>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <CheckCircle className="h-4 w-4" />
+                          <span className="truncate">Citation Audit</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <Building2 className="h-4 w-4" />
+                          <span className="truncate">Directory Listings</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <Settings className="h-4 w-4" />
+                          <span className="truncate">Citation Builder</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    </SidebarMenuSub>
+                  </CollapsibleContent>
+                </Collapsible>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
-                  <Star className="h-6 w-6 opacity-70" />
-                  <span>Reputation Manager</span>
-                </SidebarMenuButton>
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3 relative">
+                      <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+                        <ChevronRight className="h-4 w-4 text-sidebar-foreground transition-transform group-data-[state=open]:rotate-90" />
+                      </div>
+                      <Star className="h-6 w-6 opacity-70" />
+                      <span className="truncate">Reputation Manager</span>
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenuSub>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <Star className="h-4 w-4" />
+                          <span className="truncate">Review Monitoring</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <MessageSquare className="h-4 w-4" />
+                          <span className="truncate">Review Responses</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <BarChart3 className="h-4 w-4" />
+                          <span className="truncate">Reputation Analytics</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    </SidebarMenuSub>
+                  </CollapsibleContent>
+                </Collapsible>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
+                <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3">
                   <Calendar className="h-6 w-6 opacity-70" />
-                  <span>Location Summary</span>
+                  <span className="truncate">Location Summary</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
+                <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3">
                   <GoogleIcon />
-                  <span>GBP Audit</span>
+                  <span className="truncate">GBP Audit</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
+                <Collapsible>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3 relative">
+                      <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+                        <ChevronRight className="h-4 w-4 text-sidebar-foreground transition-transform group-data-[state=open]:rotate-90" />
+                      </div>
+                      <PenTool className="h-6 w-6 opacity-70" />
+                      <span className="truncate">GBP Post Scheduler</span>
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenuSub>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <PenTool className="h-4 w-4" />
+                          <span className="truncate">Create Post</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <Clock className="h-4 w-4" />
+                          <span className="truncate">Scheduled Posts</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                      <SidebarMenuSubItem>
+                        <SidebarMenuSubButton>
+                          <BarChart3 className="h-4 w-4" />
+                          <span className="truncate">Post Analytics</span>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    </SidebarMenuSub>
+                  </CollapsibleContent>
+                </Collapsible>
+              </SidebarMenuItem>
+              
+              <SidebarMenuItem>
+                <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3">
                   <Gauge className="h-6 w-6 opacity-70" />
-                  <span>Local Search Audit</span>
+                  <span className="truncate">Local Search Audit</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -153,18 +318,18 @@ export function PlatformSidebar() {
 
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="min-w-0">
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
+                <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3">
                   <Users className="h-6 w-6 opacity-70" />
-                  <span>Clients</span>
+                  <span className="truncate">Clients</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               
               <SidebarMenuItem>
-                <SidebarMenuButton size="lg" className="text-[#4e5b51] font-medium">
+                <SidebarMenuButton size="lg" className="text-sidebar-foreground font-medium h-12 px-6 gap-3">
                   <ShoppingCart className="h-6 w-6 opacity-70" />
-                  <span>Leads</span>
+                  <span className="truncate">Leads</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
