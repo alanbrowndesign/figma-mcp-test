@@ -4,6 +4,7 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const surveyOptions = [
@@ -16,9 +17,11 @@ const surveyOptions = [
   "Learn about local SEO",
 ];
 
-export function SurveyCard() {
+export function SurveyCard({ className }: { className?: string }) {
   return (
-    <Card className="min-w-[26.25rem] max-w-md bg-card rounded-xl border shadow-sm">
+    <Card
+      className={cn("max-w-md bg-card rounded-xl border shadow-sm", className)}
+    >
       <CardContent className="flex flex-col gap-6">
         <div className="flex flex-col gap-1.5 w-full">
           <CardTitle className="heading-sm text-2xl leading-8 text-card-foreground">
