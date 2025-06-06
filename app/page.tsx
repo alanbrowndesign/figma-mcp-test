@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <AppShell>
       <ThemeToggle />
-      <div className="lg:grid grid-cols-2 xl:grid-cols-3 gap-4 grid-rows-[auto_1fr]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 grid-rows-[auto_1fr]">
         <Card className="grid grid-rows-subgrid row-span-2">
           <CardHeader className="row-start-1">
             <CardTitle className="heading-sm text-2xl leading-8 text-card-foreground">
