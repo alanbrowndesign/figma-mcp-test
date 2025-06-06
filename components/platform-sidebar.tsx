@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { cn } from "@/lib/utils";
 import {
   Home,
   ListChecks,
@@ -29,6 +30,8 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarSeparator,
+  SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import {
   Collapsible,
@@ -47,15 +50,28 @@ const GoogleIcon = () => (
 );
 
 export function PlatformSidebar() {
+  const { isMobile, openMobile } = useSidebar();
+
   return (
     <Sidebar className="bg-sidebar w-[var(--sidebar-width)] px-3 pt-8">
+      {/* Mobile close button */}
+      {isMobile && (
+        <SidebarTrigger
+          className={cn(
+            "bg-background p-4 rounded-full absolute top-3 -right-10 z-10 md:hidden border transition-opacity",
+            openMobile ? "opacity-100 delay-200" : "opacity-0"
+          )}
+          aria-label="Close navigation menu"
+        />
+      )}
+
       <SidebarHeader className="hidden md:block">
         <div className="pl-3">
           <Logo className="w-[159px] h-[30px]" />
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-0 pt-12 data-[mobile=true]:pt-6">
+      <SidebarContent className="px-0 pt-3 md:pt-12 ">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
