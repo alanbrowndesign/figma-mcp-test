@@ -140,18 +140,3 @@
     font-weight: 600;
   }
 }
-
-@media screen and (max-width: 80rem) {
-  .heading-xl {
-    font-family: Inter;
-  }
-  .heading-lg {
-    font-family: Inter;
-  }
-  .heading-md {
-    font-family: Inter;
-  }
-  .heading-sm {
-    font-family: Inter;
-  }
-}
