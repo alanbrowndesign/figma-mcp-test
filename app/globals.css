@@ -140,3 +140,10 @@
     font-weight: 600;
   }
 }
+
+@layer components {
+  /* Override sidebar fixed positioning when inside a constrained app layout */
+  .max-w-\[1840px\] [data-slot="sidebar-container"] {
+    position: absolute !important;
+  }
+}
