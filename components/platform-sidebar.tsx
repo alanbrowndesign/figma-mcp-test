@@ -49,13 +49,13 @@ const GoogleIcon = () => (
 export function PlatformSidebar() {
   return (
     <Sidebar className="bg-sidebar w-[var(--sidebar-width)] px-3 pt-8">
-      <SidebarHeader>
+      <SidebarHeader className="hidden md:block">
         <div className="pl-3">
           <Logo className="w-[159px] h-[30px]" />
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-0 pt-12">
+      <SidebarContent className="px-0 pt-12 data-[mobile=true]:pt-6">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>

@@ -18,7 +18,7 @@ const surveyOptions = [
 
 export function SurveyCard() {
   return (
-    <Card className="min-w-[26.25rem] max-w-md bg-card rounded-xl border shadow-sm">
+    <Card className=" max-w-md bg-card rounded-xl border shadow-sm">
       <CardContent className="flex flex-col gap-6">
         <div className="flex flex-col gap-1.5 w-full">
           <CardTitle className="heading-sm text-2xl leading-8 text-card-foreground">
