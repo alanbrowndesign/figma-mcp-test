@@ -11,7 +11,9 @@ export default function Home() {
         <SidebarInset className="flex-1 flex items-center justify-center">
           <div className="flex flex-col items-center gap-4">
             <ThemeToggle />
-            <SurveyCard />
+            <div className="p-10">
+              <SurveyCard />
+            </div>
           </div>
         </SidebarInset>
       </div>
