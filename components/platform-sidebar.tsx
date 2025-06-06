@@ -14,11 +14,6 @@ import {
   Users, 
   ShoppingCart,
   ChevronRight,
-  Building2,
-  Settings,
-  BarChart3,
-  MessageSquare,
-  Clock,
   PenTool
 } from "lucide-react"
 
@@ -124,19 +119,16 @@ export function PlatformSidebar() {
                     <SidebarMenuSub>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <Building2 className="h-4 w-4" />
                           <span className="truncate">Add Location</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <Settings className="h-4 w-4" />
                           <span className="truncate">Manage Locations</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <BarChart3 className="h-4 w-4" />
                           <span className="truncate">Location Analytics</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
@@ -160,19 +152,16 @@ export function PlatformSidebar() {
                     <SidebarMenuSub>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <BarChart3 className="h-4 w-4" />
                           <span className="truncate">Rank Tracker</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <TrendingUp className="h-4 w-4" />
                           <span className="truncate">Keyword Rankings</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <Settings className="h-4 w-4" />
                           <span className="truncate">Ranking Settings</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
@@ -196,19 +185,16 @@ export function PlatformSidebar() {
                     <SidebarMenuSub>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <CheckCircle className="h-4 w-4" />
                           <span className="truncate">Citation Audit</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <Building2 className="h-4 w-4" />
                           <span className="truncate">Directory Listings</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <Settings className="h-4 w-4" />
                           <span className="truncate">Citation Builder</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
@@ -232,19 +218,16 @@ export function PlatformSidebar() {
                     <SidebarMenuSub>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <Star className="h-4 w-4" />
                           <span className="truncate">Review Monitoring</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <MessageSquare className="h-4 w-4" />
                           <span className="truncate">Review Responses</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <BarChart3 className="h-4 w-4" />
                           <span className="truncate">Reputation Analytics</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
@@ -282,19 +265,16 @@ export function PlatformSidebar() {
                     <SidebarMenuSub>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <PenTool className="h-4 w-4" />
                           <span className="truncate">Create Post</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <Clock className="h-4 w-4" />
                           <span className="truncate">Scheduled Posts</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                       <SidebarMenuSubItem>
                         <SidebarMenuSubButton>
-                          <BarChart3 className="h-4 w-4" />
                           <span className="truncate">Post Analytics</span>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
