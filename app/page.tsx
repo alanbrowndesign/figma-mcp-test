@@ -11,6 +11,7 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { LocationsTable } from "@/components/locations-table";
 
 const AppShell = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -88,6 +89,11 @@ export default function Home() {
             vitiis, legem sancimus haerentia.
           </CardContent>
         </Card>
+      </div>
+      
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-4">Locations Table</h2>
+        <LocationsTable />
       </div>
     </AppShell>
   );
